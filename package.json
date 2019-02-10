@@ -10,13 +10,22 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "jsonwebtoken": "^8.4.0",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "redis": "^2.8.0",
     "restify": "^7.7.0",
+    "restify-cors-middleware": "^1.1.1",
     "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "uuid": "^3.3.2",
     "vue": "^2.5.22",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.1.0",
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-e2e-nightwatch": "^3.4.0",
     "@vue/cli-plugin-eslint": "^3.4.0",
@@ -30,8 +39,10 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "fibers": "^3.1.1",
+    "purgecss": "^1.1.0",
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
+    "tailwindcss": "^0.7.4",
     "vue-template-compiler": "^2.5.21"
   }
 }
