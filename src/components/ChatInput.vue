@@ -19,6 +19,11 @@ export default {
 
   methods: {
     submit() {
+      // Don't submit an empty message
+      if (this.message.length === 0) {
+        return;
+      }
+
       this.$store.dispatch('sendMessage', this.message).then(() => {
         // Reset the message field
         this.message = '';
