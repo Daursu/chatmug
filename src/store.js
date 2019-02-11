@@ -52,7 +52,6 @@ export default new Vuex.Store({
     },
 
     refreshUsers(state, users) {
-      console.log(users);
       state.users = users;
     },
 
@@ -80,7 +79,7 @@ export default new Vuex.Store({
     },
 
     logout({ commit }) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         socket.emit('logout');
         socket.disconnect();
         commit('logout');

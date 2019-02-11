@@ -1,9 +1,11 @@
 <template>
   <div class="flex bg-white border-t p-3 items-center">
-    <input class="appearance-none w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none"
+    <input class="appearance-none w-full py-2 px-3
+                  text-grey-darker leading-tight focus:outline-none"
            type="text"
            @keypress.enter="submit"
            v-model="message"
+           v-focus
            placeholder="Type a message to send..." />
     <i class="far fa-paper-plane mr-2 text-grey" :class="{ 'text-green': message.length }"></i>
   </div>

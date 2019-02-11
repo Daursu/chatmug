@@ -1,10 +1,8 @@
 <template>
   <div class="home text-left">
-    <div class="flex flex-wrap">
-      <div class="w-2/3 ml-auto mr-auto h-12 max-w-xs">
-        <div class="w-full max-w-xs mt-12">
-          <h1 class="text-center">ChatMUG</h1>
-        </div>
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full max-w-xs ml-4 mr-4">
+        <h1 class="text-center mt-12">ChatMUG</h1>
 
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mt-8"
               v-on:submit.prevent="login">
@@ -19,7 +17,8 @@
                    autocomplete="off"
                    required="required"
                    placeholder="Username"
-                   v-model="username">
+                   v-model="username"
+                   v-focus>
           </div>
           <div v-if="loginError" class="text-red text-xs italic mb-4">
             {{ loginError }}

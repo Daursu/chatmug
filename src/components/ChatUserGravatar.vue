@@ -19,7 +19,7 @@ export default {
 
     gravatar() {
       return `https://www.gravatar.com/avatar/${this.hash}?d=identicon`;
-    }
+    },
   },
-}
+};
 </script>

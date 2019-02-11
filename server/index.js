@@ -1,3 +1,4 @@
+const fs = require('fs');
 const restify = require('restify');
 const corsMiddleware = require('restify-cors-middleware');
 const redis = require('redis');
@@ -26,11 +27,21 @@ server.pre(cors.preflight);
 server.use(cors.actual);
 server.use(restify.plugins.bodyParser({ mapParams: true }));
 
-server.get('/', (req, res, next) => {
-  res.setHeader('Content-Type', 'text/html');
-  res.writeHead(200);
-  res.end('Hello');
-  next();
+server.get('*', restify.plugins.serveStatic({
+  directory: `${__dirname}/../dist/`,
+  default: '/index.html',
+}));
+
+server.on('NotFound', (req, res) => {
+  fs.readFile(`${__dirname}/../dist/index.html`, (err, data) => {
+    if (err) {
+      return;
+    }
+
+    res.setHeader('Content-Type', 'text/html');
+    res.writeHead(200);
+    res.end(data);
+  });
 });
 
 /*---------------------------------------

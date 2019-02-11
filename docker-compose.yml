@@ -1,0 +1,23 @@
+version: "3"
+services:
+  app:
+    image: node:8.15-alpine
+    depends_on:
+      - redis
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "8081:8081"
+      - "3000:3000"
+    environment:
+      REDIS_HOST: redis
+      JWT_SECRET: secret
+      SERVER_PORT: 3000
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: npm run serve
+
+  redis:
+    image: redis:4-alpine
+    expose:
+      - "6379"

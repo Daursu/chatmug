@@ -1,10 +1,12 @@
 <template>
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <div class="min-w-xs max-w-xs flex flex-col bg-grey-darkest h-full text-left text-white">
+    <div class="min-w-xs max-w-xs sm:flex flex-col bg-grey-darkest h-full text-left text-white"
+         :class="{ 'flex absolute w-4/5 z-10': showMenu, 'hidden': !showMenu }">
       <div class="border-b border-black p-2 mb-3 mt-3 pb-3">
         <input type="text"
-               class="rounded-full bg-black text-white w-full pl-4 pr-3 pt-2 pb-2 focus:outline-none"
+               class="rounded-full bg-black text-white w-full
+                      pl-4 pr-3 pt-2 pb-2 focus:outline-none"
                v-model="userFilter"
                placeholder="Search" />
       </div>
@@ -14,15 +16,20 @@
         </li>
       </ul>
       <div class="p-4">
-        <a href="#" class="text-white no-underline hover:font-bold" @click.prevent="logout">Logout</a>
+        <a href="#"
+           class="text-white no-underline hover:font-bold"
+           @click.prevent="logout">Logout</a>
       </div>
     </div>
 
     <!--Main chat window-->
     <div class="flex-grow bg-grey-lighter h-full flex flex-col">
       <div v-if="!connected" class="bg-yellow p-2 shadow text-sm">You are currently offline...</div>
-      <div class="border-b border-light-grey text-left p-3">
-        <h1 class="text-lg font-medium pl-4 pt-3 pb-3">Lobby</h1>
+      <div class="border-b border-light-grey text-left p-3 flex items-center">
+        <h1 class="text-lg font-medium pl-4 pt-3 pb-3 flex-grow">Lobby</h1>
+        <span class="mr-2 text-lg sm:hidden">
+          <i class="fas fa-bars" @click="showMenu = !showMenu"></i>
+        </span>
       </div>
       <div ref="messagesContainer" class="flex-grow overflow-y-auto pt-3">
         <ChatMessage v-for="message in messages"
@@ -52,6 +59,7 @@ export default {
 
   data: () => ({
     userFilter: '',
+    showMenu: false,
   }),
 
   computed: {
@@ -87,7 +95,7 @@ export default {
 
     this.$store.dispatch('connect');
 
-    this.scrollToBottom();
+    return this.scrollToBottom();
   },
 
   methods: {
