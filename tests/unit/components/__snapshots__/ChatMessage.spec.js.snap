@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatMessage.vue renders the element ok 1`] = `
+<div class="flex text-left mb-4 pl-2">
+  <div class="mt-2">
+    <chatusergravatar-stub username="John"></chatusergravatar-stub>
+  </div>
+  <div class="flex-grow ml-3 max-w-xs mr-3">
+    <div class="shadow border rounded text-sm bg-white p-3">
+      <div class="text-left font-bold mb-2">
+        John
+      </div>
+      Hello ChatMug
+    </div>
+    <div class="text-right italic text-xs mt-2"><span title="2019-02-11T10:00:00.000Z">10:00 am</span></div>
+  </div>
+</div>
+`;

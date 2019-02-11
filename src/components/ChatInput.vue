@@ -5,7 +5,6 @@
            type="text"
            @keypress.enter="submit"
            v-model="message"
-           v-focus
            placeholder="Type a message to send..." />
     <i class="far fa-paper-plane mr-2 text-grey" :class="{ 'text-green': message.length }"></i>
   </div>

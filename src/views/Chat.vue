@@ -70,10 +70,6 @@ export default {
       'users',
     ]),
 
-    totalUsers() {
-      return this.users.length;
-    },
-
     filteredUsers() {
       const filter = this.userFilter.toLowerCase();
 
