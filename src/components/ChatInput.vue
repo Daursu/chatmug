@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-white border-t p-3 items-center">
+  <div class="flex bg-white border-t p-3 items-center h-16">
     <input class="appearance-none w-full py-2 px-3
                   text-grey-darker leading-tight focus:outline-none"
            type="text"

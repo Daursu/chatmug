@@ -25,7 +25,7 @@
     <!--Main chat window-->
     <div class="flex-grow bg-grey-lighter h-full flex flex-col">
       <div v-if="!connected" class="bg-yellow p-2 shadow text-sm">You are currently offline...</div>
-      <div class="border-b border-light-grey text-left p-3 flex items-center">
+      <div class="border-b border-light-grey text-left p-3 flex items-center h-16">
         <h1 class="text-lg font-medium pl-4 pt-3 pb-3 flex-grow">Lobby</h1>
         <span class="mr-2 text-lg sm:hidden">
           <i class="fas fa-bars" @click="showMenu = !showMenu"></i>
