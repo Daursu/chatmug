@@ -76,7 +76,6 @@ export default {
   body {
     background-image: url('../assets/home-bg.jpeg');
 
-    /*
     &::after {
       background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
       box-shadow: 0 0 80px rgba(0, 0, 0, 0.3) inset;
@@ -86,8 +85,7 @@ export default {
       right: 0;
       bottom: 0;
       position: absolute;
-      z-index: 1;
+      z-index: -1;
     }
-    */
   }
 </style>
