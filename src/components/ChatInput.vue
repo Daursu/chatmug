@@ -3,6 +3,7 @@
     <input class="appearance-none w-full py-2 px-3
                   text-grey-darker leading-tight focus:outline-none"
            type="text"
+           id="chat-input"
            @keypress.enter="submit"
            v-model="message"
            placeholder="Type a message to send..." />

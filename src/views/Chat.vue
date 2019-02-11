@@ -1,9 +1,9 @@
 <template>
-  <div class="flex h-screen">
+  <div id="p-chat" class="flex h-screen">
     <!-- Sidebar -->
     <div class="min-w-xs max-w-xs sm:flex flex-col bg-grey-darkest h-full text-left text-white"
          :class="{ 'flex absolute w-4/5 z-10': showMenu, 'hidden': !showMenu }">
-      <div class="border-b border-black p-2 mb-3 mt-3 pb-3">
+      <div class="border-b border-black p-2 mb-3 mt-2 pb-3">
         <input type="text"
                class="rounded-full bg-black text-white w-full
                       pl-4 pr-3 pt-2 pb-2 focus:outline-none"

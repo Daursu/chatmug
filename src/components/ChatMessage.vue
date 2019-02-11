@@ -3,7 +3,7 @@
     <div class="mt-2">
       <ChatUserGravatar :username="message.username"/>
     </div>
-    <div class="flex-grow ml-3 max-w-xs mr-3">
+    <div class="flex-grow ml-3 max-w-xs mr-3 message-container">
       <div class="shadow border rounded text-sm bg-white p-3"
            :class="{ 'bg-green text-white': ownMessage }">
         <div class="text-left font-bold mb-2">
